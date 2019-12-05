@@ -1,0 +1,22 @@
+.schedule-toolbar{
+    background: transparent !important;
+    height: 40px;
+    margin-top: -40px;
+}
+.cal-arrows{
+    width: 160px;
+}
+
+@media screen and (max-width: 600px) {    
+    .schedule-toolbar{
+        background: transparent !important;
+        height: 112px;
+        margin-top: -112px;
+    }
+    .cal-mobile{
+        padding-bottom: 112px !important;
+    }
+    .cal-arrows{
+        width: auto;
+    }
+}

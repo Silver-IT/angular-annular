@@ -1,0 +1,81 @@
+#app-spinner{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 999999;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0.5s, opacity 0.3s linear;
+    -moz-transition: visibility 0.5s, opacity 0.3s linear;
+    transition: visibility 0.5s, opacity 0.3s linear;
+    &.hide{
+        visibility: hidden;
+        opacity: 0; 
+    }
+    h4{
+        margin-top: 10px;
+        letter-spacing: 0.02em;
+        opacity: 0;
+        text-transform: uppercase;
+        -moz-animation: loading-text-opacity 2s linear 0s infinite normal;
+        -o-animation: loading-text-opacity 2s linear 0s infinite normal;
+        -webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
+        animation: loading-text-opacity 2s linear 0s infinite normal;
+    }
+    img.animated-logo {
+        -moz-animation: rotation 2s infinite linear;
+        -o-animation: rotation 2s infinite linear;
+        -webkit-animation: rotation 2s infinite linear;
+        animation: rotation 2s infinite linear;
+    }
+}
+
+
+@keyframes rotation { 
+    100% { transform: rotate(360deg); } 
+}
+@-moz-keyframes rotation { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes rotation { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@-o-keyframes rotation { 
+    100% { -o-transform: rotate(360deg); }
+}
+
+
+@keyframes loading-text-opacity {
+    0%  {opacity: 0}
+    20% {opacity: 0}
+    50% {opacity: 1}
+    100%{opacity: 0}
+}
+@-moz-keyframes loading-text-opacity {
+    0%  {opacity: 0}
+    20% {opacity: 0}
+    50% {opacity: 1}
+    100%{opacity: 0}
+}
+@-webkit-keyframes loading-text-opacity {
+    0%  {opacity: 0}
+    20% {opacity: 0}
+    50% {opacity: 1}
+    100%{opacity: 0}
+}
+@-o-keyframes loading-text-opacity {
+    0%  {opacity: 0}
+    20% {opacity: 0}
+    50% {opacity: 1}
+    100%{opacity: 0}
+}

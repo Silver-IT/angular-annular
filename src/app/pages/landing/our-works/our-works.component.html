@@ -1,0 +1,24 @@
+<div id="works" class="mt-2 pt-3">
+    <div fxLayout="column" fxLayoutAlign="center center" class="title-section p-2 mb-2">  
+        <h1>Our Recent Work</h1>             
+        <p class="secondary-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit mauris euismod, consequat ipsum nec, egestas est.</p>
+    </div> 
+    <ngu-carousel #myCarousel [inputs]="worksCarouselConfig" [dataSource]="works">
+        <ngu-tile *nguCarouselDef="let work; let j = index">
+           <mat-card>                   
+                <img mat-card-image [src]="work.src" alt="image">
+                <mat-card-content>
+                    <h3>{{work.name}}</h3>
+                    <p class="secondary-text-color mt-2">{{work.desc}}</p>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-card-actions fxLayoutAlign="end center" class="secondary-text-color">                               
+                    <button mat-icon-button><mat-icon>favorite</mat-icon></button>
+                    <button mat-icon-button><mat-icon>share</mat-icon></button>
+                </mat-card-actions>
+            </mat-card>
+        </ngu-tile>
+        <button mat-mini-fab NguCarouselPrev class="arrow-btn prev"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-mini-fab NguCarouselNext class="arrow-btn next"><mat-icon>keyboard_arrow_right</mat-icon></button>
+    </ngu-carousel>
+</div>

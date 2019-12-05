@@ -1,0 +1,57 @@
+<app-content-header 
+    [icon]="'pie_chart'" 
+    [title]="'Pie Charts'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Pie Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-pie-chart
+                    [scheme]="colorScheme"
+                    [results]="single"
+                    [legend]="showLegend"
+                    [explodeSlices]="explodeSlices"
+                    [labels]="showLabels"
+                    [doughnut]="doughnut"
+                    [gradient]="gradient"
+                    (select)="onSelect($event)">
+                </ngx-charts-pie-chart>                  
+            </div>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Advanced Pie Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-advanced-pie-chart
+                    [scheme]="colorScheme"
+                    [results]="single"
+                    [gradient]="gradient"
+                    (select)="onSelect($event)">
+                </ngx-charts-advanced-pie-chart>         
+            </div>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Pie Grid Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-pie-grid
+                    [scheme]="colorScheme"
+                    [results]="single"
+                    (select)="onSelect($event)">
+                </ngx-charts-pie-grid>        
+            </div>
+        </mat-card>
+    </div>    
+</div>

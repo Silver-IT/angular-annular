@@ -1,0 +1,99 @@
+<app-content-header 
+    [icon]="'show_chart'" 
+    [title]="'Line Charts'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2">
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Line Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-line-chart
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    [autoScale]="autoScale"
+                    (select)="onSelect($event)">
+                </ngx-charts-line-chart>                  
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Area Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-area-chart
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    [autoScale]="autoScale"
+                    (select)="onSelect($event)">
+                </ngx-charts-area-chart>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Stacked Area Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-area-chart-stacked                     
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-area-chart-stacked>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+      <mat-card>
+          <mat-card-header fxLayoutAlign="center center">                
+              <mat-card-subtitle><h2>Normalized Area Chart</h2></mat-card-subtitle>
+          </mat-card-header>
+          <div class="w-100 h-300p">
+              <ngx-charts-area-chart-normalized
+                  [scheme]="colorScheme"
+                  [results]="multi"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="xAxisLabel"
+                  [yAxisLabel]="yAxisLabel"
+                  (select)="onSelect($event)">
+              </ngx-charts-area-chart-normalized>          
+          </div>
+      </mat-card>
+  </div>
+</div>

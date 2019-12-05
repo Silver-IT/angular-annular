@@ -1,0 +1,65 @@
+<button mat-icon-button [matMenuTriggerFor]="appsMenu" #appsMenuTrigger="matMenuTrigger">
+    <mat-icon>apps</mat-icon>
+</button>
+<mat-menu #appsMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu applications">
+    <span (mouseleave)="appsMenuTrigger.closeMenu()">
+        <mat-card>           
+            <mat-grid-list cols="3" rowHeight="1:1">
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-purple">person</mat-icon>
+                      <span>My account</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-indigo">search</mat-icon>
+                      <span>Search</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-blue">play_arrow</mat-icon>
+                      <span>Player</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-orange">settings</mat-icon>
+                      <span>Settings</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-green">event</mat-icon>
+                      <span>Calendar</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-pink">image</mat-icon>
+                      <span>Gallery</span>
+                  </button>
+                </mat-grid-tile>
+                 <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-brown">library_books</mat-icon>
+                      <span>Documents</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-red">mail</mat-icon>
+                      <span>Mail</span>
+                  </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <button mat-button>
+                      <mat-icon class="gradient-gray">place</mat-icon>
+                      <span>Maps</span>
+                  </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </span>
+</mat-menu>

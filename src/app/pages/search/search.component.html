@@ -1,0 +1,13 @@
+<app-content-header 
+    [icon]="'search'" 
+    [title]="title" 
+    [desc]="description"
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
+    <div fxFlex="100" class="p-2">
+        <p *ngIf="param">Search results for : {{param}}</p>
+    </div>
+</div>

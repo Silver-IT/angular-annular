@@ -1,0 +1,51 @@
+<app-content-header 
+    [icon]="'mouse'" 
+    [title]="'Drag & Drop'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="row wrap" fxLayout.xs="column" [dragula]="'bag-container'" class="p-2">
+    <div *ngFor="let icon of icons" fxFlex="33.3" class="p-2"> 
+        <mat-card class="draggable">            
+            <mat-card-header fxLayoutAlign="center">
+                <mat-card-subtitle fxLayoutAlign="center">
+                    <mat-icon class="mat-icon-xlg">{{icon}}</mat-icon>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="text-center">
+                There's also the possibility of moving elements around in the same container, changing their position.
+            </mat-card-content>           
+        </mat-card>
+    </div>
+</div>
+<div fxLayout="row" class="p-2">
+    <div fxFlex="50" class="p-2">
+        <mat-card>            
+            <mat-card-header fxLayoutAlign="center">
+                <mat-card-subtitle fxLayoutAlign="center">
+                    <h2>First Container</h2> 
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content [dragula]="'bag-1'" class="bag">
+                <mat-card *ngFor="let color of colors" [class.bg-primary]="color=='primary'" [class.bg-accent]="color=='accent'" [class.bg-warn]="color=='warn'" class="draggable">
+                    You can move these elements between these two containers
+                </mat-card>                 
+            </mat-card-content>           
+        </mat-card> 
+    </div>
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>            
+            <mat-card-header fxLayoutAlign="center">
+                <mat-card-subtitle fxLayoutAlign="center">
+                    <h2>Second Container</h2> 
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content [dragula]="'bag-1'" class="bag">
+                <mat-card *ngFor="let color of colors" [class.bg-primary]="color=='primary'" [class.bg-accent]="color=='accent'" [class.bg-warn]="color=='warn'"  class="draggable">
+                    You can move these elements between these two containers
+                </mat-card>                 
+            </mat-card-content>          
+        </mat-card> 
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.user-block{
+    img{
+        border-radius: 50%;
+        width: 95px;
+        height: 95px;
+        border: 1px solid rgba(0,0,0,.12);
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    p{
+        font-size: 13px;
+    }
+}
+.sidenav-menu-outer{
+    height: 100%; 
+}
+#vertical-menu.ps{
+    height: calc(100% - 180px);
+}

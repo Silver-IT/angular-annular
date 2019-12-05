@@ -1,0 +1,7 @@
+<div class="content-header bg-primary" [class.bg-image]="hasBgImage" [ngClass]="class">
+  
+  <app-breadcrumb [hidden]="hideBreadcrumb"></app-breadcrumb>
+  <mat-icon *ngIf="icon" class="mat-icon-xlg">{{icon}}</mat-icon>
+  <h1 *ngIf="title">{{title}}</h1>
+  <h4 *ngIf="desc" class="p-2">{{desc}}</h4>
+</div>

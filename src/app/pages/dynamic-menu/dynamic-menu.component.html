@@ -1,0 +1,54 @@
+<app-content-header 
+    [icon]="'format_list_bulleted'" 
+    [title]="'Dynamic menu'" 
+    [desc]="'Create and add menu items dynamically using following approach.'"
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
+    <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="60" class="p-2">
+        <mat-card class="block">
+            <mat-card-content>
+                <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">      
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Title" formControlName="title">
+                        <mat-error *ngIf="form.controls.title.errors?.required">Menu title is required</mat-error>
+                        <mat-error *ngIf="form.controls.title.hasError('minlength')">Menu title isn't long enough, minimum of 3 characters</mat-error>
+                    </mat-form-field> 
+                    <mat-form-field class="w-100">
+                        <mat-select placeholder="Icon" formControlName="icon">
+                            <mat-option *ngFor="let icon of icons" [value]="icon">
+                                <mat-icon>{{ icon }}</mat-icon>
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="w-100" >
+                        <input matInput placeholder="RouterLink" formControlName="routerLink" matTooltip="e.g. /dashboard" matTooltipPosition="after">
+                        <mat-error *ngIf="form.controls.routerLink.errors?.required">Routerlink or href is required</mat-error>
+                    </mat-form-field>
+                    <mat-checkbox formControlName="hasSubMenu">Has sub menu</mat-checkbox>
+                    <mat-form-field class="w-100" >
+                        <input matInput placeholder="Href" formControlName="href" matTooltip="e.g. http://themeseason.com" matTooltipPosition="after">
+                        <mat-error *ngIf="form.controls.href.errors?.required">Href or routerlink is required</mat-error>
+                    </mat-form-field>
+                    <mat-radio-group formControlName="target">
+                        <mat-radio-button value="_blank">_blank</mat-radio-button>
+                        <mat-radio-button value="_self" class="mx-2">_self</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-form-field class="w-100">
+                        <mat-select placeholder="Parent menu" formControlName="parentId">
+                            <mat-option value="0">-- Select Parent Menu --</mat-option>
+                            <mat-option *ngFor="let menuItem of menuItems" [value]="menuItem.id">
+                                {{menuItem.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Add New Menu Item</button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+      </div> 
+</div> 

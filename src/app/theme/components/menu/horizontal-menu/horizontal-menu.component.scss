@@ -1,0 +1,46 @@
+@import "../../../styles/variables";
+.horizontal-menu-item{
+    position: relative;
+    width: 100%;
+    .mat-button{
+        height: $horizontal-menu-height;
+        font-weight: 400;
+        border-radius: 0;
+        &.parent-item{        
+            .mat-button-wrapper{
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+            .horizontal-menu-icon{
+                padding: 7px;
+                border-radius: 50%;                
+            }
+        }
+    }
+    .horizontal-menu-icon{
+        margin-right: 8px;
+    }
+    .horizontal-sub-menu{
+        position: absolute;
+        width: 190px;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 2;
+        -webkit-transition: max-height 0.25s ease-out;  
+        -moz-transition: max-height 0.25s ease-out;  
+        transition: max-height 0.25s ease-out;  
+        .mat-button{
+            width: 100%;
+            height: 36px; 
+        }
+    }    
+}
+.horizontal-menu-item:hover > .horizontal-sub-menu{
+    max-height: 500px;
+    overflow: visible;
+}
+.horizontal-sub-menu .horizontal-sub-menu{
+    left: 100%;
+    top: 0;
+}

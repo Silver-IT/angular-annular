@@ -1,0 +1,141 @@
+<app-content-header 
+    [icon]="'keyboard'" 
+    [title]="'Buttons'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2">
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Basic Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-button class="m-1">Basic</button>
+                <button mat-button color="primary" class="m-1">Primary</button>
+                <button mat-button color="accent" class="m-1">Accent</button>
+                <button mat-button color="warn" class="m-1">Warn</button>
+                <button mat-button disabled class="m-1">Disabled</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Raised Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-raised-button class="m-1">Basic</button>
+                <button mat-raised-button color="primary" class="m-1">Primary</button>
+                <button mat-raised-button color="accent" class="m-1">Accent</button>
+                <button mat-raised-button color="warn" class="m-1">Warn</button>
+                <button mat-raised-button disabled class="m-1">Disabled</button>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Fab Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-fab class="m-1">Basic</button>
+                <button mat-fab color="primary" class="m-1">Primary</button>
+                <button mat-fab color="accent" class="m-1">Accent</button>
+                <button mat-fab color="warn" class="m-1">Warn</button>
+                <button mat-fab disabled class="m-1">Disabled</button>
+                <button mat-fab class="m-1">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <a mat-fab routerLink="." class="m-1">Link</a>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Mini Fab Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-mini-fab class="m-1">Basic</button>
+                <button mat-mini-fab color="primary" class="m-1 o-hidden">Primary</button>
+                <button mat-mini-fab color="accent" class="m-1 o-hidden">Accent</button>
+                <button mat-mini-fab color="warn" class="m-1">Warn</button>
+                <button mat-mini-fab disabled class="m-1 o-hidden">Disabled</button>
+                <button mat-mini-fab class="m-1">
+                  <mat-icon>favorite</mat-icon>
+                </button>
+                <a mat-mini-fab routerLink="." class="m-1">Link</a>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Icon Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-icon-button>
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button color="primary">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button color="accent">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button color="warn">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button disabled>
+                    <mat-icon>favorite</mat-icon>
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Toggle Buttons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    Default appearance:
+                    <mat-button-toggle-group #group="matButtonToggleGroup">
+                        <mat-button-toggle value="left">
+                                <mat-icon>format_align_left</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="center">
+                            <mat-icon>format_align_center</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="right">
+                            <mat-icon>format_align_right</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="justify" disabled>
+                            <mat-icon>format_align_justify</mat-icon>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </p>
+                
+                <p class="mt-3">
+                    Legacy appearance:
+                    <mat-button-toggle-group appearance="legacy" #group="matButtonToggleGroup">
+                        <mat-button-toggle value="left">
+                                <mat-icon>format_align_left</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="center">
+                            <mat-icon>format_align_center</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="right">
+                            <mat-icon>format_align_right</mat-icon>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="justify" disabled>
+                            <mat-icon>format_align_justify</mat-icon>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>           
+</div>

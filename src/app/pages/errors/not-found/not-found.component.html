@@ -1,0 +1,28 @@
+<mat-sidenav-container class="h-100">
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+       <div fxFlex="80" fxFlex.gt-sm="30" fxFlex.sm="60" class="mat-elevation-z6">
+            <app-content-header 
+                [icon]="'error'" 
+                [title]="'404'" 
+                [hideBreadcrumb]="true"
+                [hasBgImage]="true" 
+                [class]="'pt-4 pb-3'"></app-content-header>            
+            <div class="p-4 text-center">
+                <p class="pt-2">Opps, it seems that this page does not exist.</p> 
+                <p class="pt-2">If you are sure it should, search for it.</p> 
+                <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="mt-3">
+                    <mat-form-field class="w-100 py-2">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">search</mat-icon>
+                        <input matInput formControlName="param" placeholder="Enter search keyword...">
+                        <mat-error *ngIf="form.controls.param.errors?.required">Text is required</mat-error>
+                    </mat-form-field>
+                    <div class="mt-3">
+                        <button [disabled]="!form.valid" mat-raised-button color="accent" class="mat-elevation-z6 mx-1" type="submit">SEARCH</button>
+                        <button mat-raised-button color="primary" class="mat-elevation-z6 mx-1" type="button" (click)="goHome()">GO HOME</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+  </div>
+</mat-sidenav-container>

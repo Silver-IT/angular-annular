@@ -1,0 +1,97 @@
+<app-content-header 
+    [icon]="'tab'" 
+    [title]="'Tabs'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Basic tabs</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab label="Tab 1"><p class="py-1">Vestibulum dapibus ut libero at vestibulum. Donec cursus vitae leo ut bibendum. Pellentesque ac sagittis elit. In hac habitasse platea dictumst. In sed sapien convallis, laoreet dolor at, ullamcorper eros. Vestibulum et urna vel ligula dignissim feugiat. Cras posuere eleifend nisi quis pharetra. Cras nec varius nulla. Morbi quis lacus eget tellus eleifend varius. Sed ornare imperdiet nibh, sed accumsan nisi feugiat facilisis.</p></mat-tab>
+                    <mat-tab label="Tab 2"><p class="py-1">Phasellus ac libero malesuada, hendrerit nibh sit amet, porttitor ex. Quisque nec commodo ipsum. Nam id interdum lacus, ac vulputate metus. Mauris congue, nunc in faucibus porta, leo sapien dignissim elit, ac dignissim nunc neque et arcu. Fusce facilisis finibus risus, ac pulvinar sem mattis at. Sed eu tempor justo. Duis pellentesque, leo ut euismod convallis, mi elit vulputate orci, a vestibulum orci erat at nunc. Fusce rutrum eget lacus eget malesuada.</p></mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Complex Example</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab label="Tab 1">
+                        <p class="py-1">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                          Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                          In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                          feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                          orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p>
+                    </mat-tab>
+                    <mat-tab label="Tab 2">
+                        <ng-template mat-tab-label>
+                          ⭐
+                        </ng-template>
+                        <p class="py-1">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                          Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                          In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                          feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                          orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p>  
+                    </mat-tab>
+                    <mat-tab label="Disabled Tab" disabled>
+                        <p class="py-1"> No content </p>
+                    </mat-tab>
+                    <mat-tab label="Tab 3">
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p> 
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p>
+                    </mat-tab>
+                    <mat-tab label="Tab 4">
+                        <p class="py-1">No content in Tab 4</p>
+                    </mat-tab>
+                    <mat-tab label="Tab 5">
+                        <p class="py-1">No content in Tab 5</p>
+                    </mat-tab>
+                    <mat-tab label="Tab 6">
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p> 
+                    </mat-tab>
+                    <mat-tab label="Tab 7">
+                        <p class="py-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                        </p>
+                    </mat-tab>
+                  </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>      
+</div>

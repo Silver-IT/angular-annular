@@ -1,0 +1,65 @@
+<app-content-header 
+    [icon]="'tune'" 
+    [title]="'Slider'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Slider configuration</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <section class="py-3">
+                    <mat-form-field class="mx-2">
+                        <input matInput type="number" placeholder="Value" [(ngModel)]="value">
+                    </mat-form-field>
+                    <mat-form-field class="mx-2">
+                        <input matInput type="number" placeholder="Min value" [(ngModel)]="min">
+                    </mat-form-field>
+                    <mat-form-field class="mx-2">
+                        <input matInput type="number" placeholder="Max value" [(ngModel)]="max">
+                    </mat-form-field>
+                    <mat-form-field class="mx-2">
+                        <input matInput type="number" placeholder="Step size" [(ngModel)]="step">
+                    </mat-form-field>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="showTicks" class="mx-2">Show ticks</mat-checkbox>
+                    <mat-checkbox [(ngModel)]="autoTicks" *ngIf="showTicks" class="mx-2">Auto ticks</mat-checkbox>
+                    <mat-form-field *ngIf="showTicks && !autoTicks">
+                        <input matInput type="number" placeholder="Tick interval" [(ngModel)]="tickInterval">
+                    </mat-form-field>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="thumbLabel" class="mx-2">Show thumb label</mat-checkbox>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="vertical" class="mx-2">Vertical</mat-checkbox>
+                    <mat-checkbox [(ngModel)]="invert" class="mx-2">Inverted</mat-checkbox>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="disabled" class="mx-2">Disabled</mat-checkbox>
+                </section>                            
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-content>
+                <h2 class="py-3 mx-2">Result</h2>
+                <mat-slider class="py-3 mx-2"
+                    [disabled]="disabled"
+                    [invert]="invert"
+                    [max]="max"
+                    [min]="min"
+                    [step]="step"
+                    [thumbLabel]="thumbLabel"
+                    [tickInterval]="tickInterval"
+                    [(ngModel)]="value"
+                    [vertical]="vertical">
+                </mat-slider>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+</div>

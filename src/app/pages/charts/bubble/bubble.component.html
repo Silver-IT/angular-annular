@@ -1,0 +1,37 @@
+<app-content-header 
+    [icon]="'bubble_chart'" 
+    [title]="'Bubble Charts'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Bubble Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bubble-chart
+                    [results]="bubble"
+                    [showGridLines]="showGridLines"
+                    [legend]="showLegend"
+                    [legendTitle]="legendTitle"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    [autoScale]="autoScale"
+                    [scheme]="colorScheme"
+                    [schemeType]="schemeType"
+                    [roundDomains]="roundDomains"
+                    [tooltipDisabled]="tooltipDisabled"
+                    [minRadius]="minRadius"
+                    [maxRadius]="maxRadius">
+                </ngx-charts-bubble-chart>                  
+            </div>
+        </mat-card>
+    </div>
+</div>

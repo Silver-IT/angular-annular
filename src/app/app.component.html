@@ -1,0 +1,15 @@
+<div id="app" class="app" [dir]="(settings.rtl) ? 'rtl' : 'ltr'"
+            [ngClass]="settings.theme" 
+            [class.fixed-header]="settings.fixedHeader"
+            [class.fixed-sidenav]="settings.fixedSidenav"
+            [class.fixed-footer]="settings.fixedFooter"
+            [class.horizontal-menu]="settings.menu == 'horizontal'" 
+            [class.compact]="settings.menuType == 'compact'" 
+            [class.mini]="settings.menuType == 'mini'">  
+    <router-outlet></router-outlet>
+    <div id="app-spinner" [class.hide]="!settings.loadingSpinner"> 
+        <!--<mat-spinner color="primary"></mat-spinner> -->
+        <img src="assets/img/logo.png" class="animated-logo"> 
+        <h4>loading...</h4>
+    </div> 
+</div>

@@ -1,0 +1,97 @@
+@import "../../theme/styles/variables";
+
+.mailbox-toolbar{
+    background: transparent !important;
+    height: 40px;
+    margin-top: -40px;
+    .mail-search{
+        width: 0;
+        overflow: hidden;
+        transition: 0.3s;
+        font-size: 14px;
+        .mat-form-field{
+            width: 100% !important;
+            text-align: center !important;
+            height: 36px;        
+        }
+        .mat-form-field-infix{
+            padding: 5px;
+            width: 50px;
+        }
+        .mat-input-element{
+            text-align: center;
+        }
+        &.show{
+            width: 100%;
+            overflow: visible;
+        }
+    } 
+    .compose{
+        line-height: 30px;
+        box-shadow: none;
+    }   
+}
+
+.mailbox-container{
+    height: calc(100vh - (#{$top-toolbar-height} + #{$footer-toolbar-height} + 148px));
+}
+
+.mailbox{
+    border-radius: 0; 
+    .mail-body{
+        padding: 16px;
+    }   
+    .empty{
+        mat-icon{
+            font-size: 220px;
+            height: 220px;
+            width: 220px;
+            opacity: 0.4;
+        }
+        p{
+            font-size: 18px;
+            opacity: 0.8;
+        }
+    }    
+}
+.mailbox-sidenav{
+    width: 350px;
+    border-right: 1px solid transparent;
+    overflow: hidden;
+}
+.mailbox-content{
+    height: calc(100vh - (#{$top-toolbar-height} + #{$footer-toolbar-height} + 148px));
+    .mat-list .mat-list-item .mat-line{
+        white-space: unset;
+    }
+    .subject{
+        font-weight: 500;
+    }
+}
+.mailbox-sidenav-list{
+    height: 100%;
+    .sender{
+        font-weight: 400;
+    }
+    .subject{
+        font-size: 13px;
+    }
+    .unread .mat-line, .unread .sender {
+        font-weight: bold;
+    }
+    .selected{
+        background: rgba(0,0,0,.15);
+    }
+}
+
+@media (max-width: 575px) { 
+    .mailbox-sidenav{
+        width: 280px;
+    }
+}
+@media (max-width: 960px) { 
+    .mailbox-container,
+    .mailbox-content{
+        height: calc(100vh - (#{$top-toolbar-height} + #{$footer-toolbar-height} + 130px));
+    }
+}

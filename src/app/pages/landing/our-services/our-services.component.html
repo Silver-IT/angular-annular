@@ -1,0 +1,21 @@
+<div id="services" class="mt-2 pt-3">
+    <div fxLayout="column" fxLayoutAlign="center center" class="title-section p-2 mb-2">  
+        <h1>Our Services</h1>             
+        <p class="secondary-text-color">Trusted, reliable and professional services. Trust us the work you can't do yourself.</p>
+    </div>
+    <ngu-carousel #myCarousel [inputs]="servicesCarouselConfig" [dataSource]="services">
+        <ngu-tile *nguCarouselDef="let service; let j = index">
+            <mat-card fxLayout="column" fxLayoutAlign="center center" class="w-100">            
+                <mat-icon class="mat-icon-xlg secondary-text-color">{{service.icon}}</mat-icon>
+                <h2 class="block-title my-3">{{service.title}}</h2>
+                <p class="text-center secondary-text-color">
+                    {{service.desc}}
+                </p> 
+                <button mat-raised-button color="accent" class="mt-3">READ MORE</button>          
+            </mat-card>
+        </ngu-tile>
+        <ul class="nguCarouselPoints" NguCarouselPoint>
+            <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"></li>
+        </ul>
+    </ngu-carousel>
+</div>

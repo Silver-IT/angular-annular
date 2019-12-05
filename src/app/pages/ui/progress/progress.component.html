@@ -1,0 +1,46 @@
+<app-content-header 
+    [icon]="'data_usage'" 
+    [title]="'Progress'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2"> 
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Progress Spinner Determinate</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayoutAlign="center">
+                <mat-progress-spinner mode="determinate" value="65"></mat-progress-spinner>
+            </mat-card-content>
+        </mat-card>
+    </div>   
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Progress Spinner Indeterminate</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayoutAlign="center">
+                <mat-spinner></mat-spinner>
+            </mat-card-content>
+        </mat-card>
+    </div>     
+    <div fxFlex="100" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Progress bar</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p class="py-1">Determinate</p>
+                <mat-progress-bar value="65" color="accent"></mat-progress-bar>
+                <p class="py-1">Indeterminate</p>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                <p class="py-1">Buffer</p>
+                <mat-progress-bar mode="buffer" value="40" bufferValue="60" color="warn"></mat-progress-bar>
+                <p class="py-1">Query</p>
+                <mat-progress-bar mode="query" color="accent"></mat-progress-bar>
+            </mat-card-content>
+        </mat-card>
+    </div>           
+</div>

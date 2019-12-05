@@ -1,0 +1,47 @@
+<app-content-header 
+    [icon]="'short_text'" 
+    [title]="'Autocomplete'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2"> 
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Simple autocomplete</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayoutAlign="center">
+                <form>
+                    <mat-form-field>
+                        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of options" [value]="option">
+                                {{ option }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>   
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Filter autocomplete</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayoutAlign="center">
+                <form>
+                    <mat-form-field>
+                        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="filteredControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                              {{ option }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>           
+</div>

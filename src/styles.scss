@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://cdn.quilljs.com/1.2.2/quill.snow.css');
+@import url('https://cdn.quilljs.com/1.2.2/quill.bubble.css');
+
+// indigo-pink, deeppurple-amber, purple-green and pink-bluegrey.
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+@import "app/theme/styles/base";
+@import "app/theme/styles/spaces";
+@import "app/theme/styles/libs-override";
+@import "app/theme/styles/theme";
+@import "app/theme/styles/gradients";
+@import "app/theme/styles/rtl";

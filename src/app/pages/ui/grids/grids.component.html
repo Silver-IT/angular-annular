@@ -1,0 +1,40 @@
+<app-content-header 
+    [icon]="'grid_on'" 
+    [title]="'Grids'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Basic grid-list</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="2:1">
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 1</mat-grid-tile>
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 2</mat-grid-tile>
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 3</mat-grid-tile>
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 4</mat-grid-tile>
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 5</mat-grid-tile>
+                    <mat-grid-tile [style.background]="'lightgray'">Grid 6</mat-grid-tile>
+                </mat-grid-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Dynamic grid-list</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-grid-list cols="4" rowHeight="100px">
+                    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+                        {{tile.text}}
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-card-content>
+        </mat-card>
+    </div>    
+</div>

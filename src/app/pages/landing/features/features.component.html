@@ -1,0 +1,21 @@
+<div id="features" class="mt-2 pt-3">
+    <div fxLayout="column" fxLayoutAlign="center center" class="title-section p-2 mb-2">  
+        <h1>Great Features And Benefits</h1>             
+        <p class="secondary-text-color">Here are even more ways Annular can help you bootstrap your business efforts.</p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center">        
+        <div fxFlex="100">
+            <div fxLayout="row wrap" fxLayoutAlign="center center">
+                <div *ngFor="let feature of features" fxFlex="100" fxFlex.gt-md="25" fxFlex.md="33.3" fxFlex.sm="50" class="p-2">
+                    <mat-card fxLayout="column" fxLayoutAlign="center center" class="w-100">            
+                        <mat-icon class="mat-icon-xlg accent-color">{{feature.icon}}</mat-icon>
+                        <h2 class="block-title my-3">{{feature.title}}</h2>
+                        <p class="text-center secondary-text-color">
+                            {{feature.desc}}
+                        </p>           
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

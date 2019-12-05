@@ -1,0 +1,31 @@
+<div id="testimonials" class="mt-2 pt-3">
+    <div fxLayout="column" fxLayoutAlign="center center" class="title-section p-2 mb-2">  
+        <h1>Our clients and what people are saying</h1>             
+        <p class="secondary-text-color">Sed magna ipsum, ultricies sed sagittis nec, scelerisque eu libero. Donec at metus ac eros accumsan semper.</p>
+    </div>
+    <div class="px-2 pb-4">
+        <mat-card class="px-0">
+            <ngu-carousel [inputs]="clientsCarouselConfig" [dataSource]="clients">
+                <ngu-tile *nguCarouselDef="let client; let j = index">
+                    <div class="client-item">
+                        <img [src]="client" alt="image">                       
+                    </div>
+                </ngu-tile>
+                <button mat-mini-fab NguCarouselPrev class="arrow-btn prev"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                <button mat-mini-fab NguCarouselNext class="arrow-btn next"><mat-icon>keyboard_arrow_right</mat-icon></button>
+            </ngu-carousel>
+        </mat-card>
+    </div>
+    <ngu-carousel #testimonialsCarousel [inputs]="testimonialsCarouselConfig" [dataSource]="testimonials">
+        <ngu-tile *nguCarouselDef="let testimonial; let j = index">
+            <mat-card class="testimonial-item">
+                <img [src]="testimonial.image" alt="image" class="mat-elevation-z2">
+                <p class="text secondary-text-color my-3">"{{testimonial.text}}"</p>
+                <h4 class="secondary-text-color"> - {{testimonial.author}}, {{testimonial.company}}</h4>                       
+            </mat-card>
+        </ngu-tile>
+        <ul class="nguCarouselPoints" NguCarouselPoint>
+            <li *ngFor="let i of testimonialsCarousel.pointNumbers; let i = index" [class.active]="i==testimonialsCarousel.activePoint" (click)="testimonialsCarousel.moveTo(i)"></li>
+        </ul>
+    </ngu-carousel>
+</div>

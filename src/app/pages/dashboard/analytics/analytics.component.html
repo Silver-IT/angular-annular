@@ -1,0 +1,21 @@
+<mat-card class="gradient-purple p-0">
+    <mat-card-content>
+        <div class="w-100 h-400p" #resizedDiv>
+            <ngx-charts-line-chart
+                [scheme]="colorScheme"
+                [results]="analytics"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                [roundDomains]="roundDomains"
+                (select)="onSelect($event)">
+            </ngx-charts-line-chart>             
+        </div>
+    </mat-card-content>
+</mat-card>

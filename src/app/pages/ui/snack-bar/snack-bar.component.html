@@ -1,0 +1,25 @@
+<app-content-header 
+    [icon]="'sms'" 
+    [title]="'Snackbar'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Snackbar Overview</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                  <input matInput value="Disco party!" placeholder="Message" #message>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput value="Dance" placeholder="Action" #action>
+                </mat-form-field>
+                <button mat-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

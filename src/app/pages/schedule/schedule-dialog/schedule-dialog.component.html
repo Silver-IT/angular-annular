@@ -1,0 +1,24 @@
+<h1 mat-dialog-title><span *ngIf="!form.controls.isEdit.value">Add</span><span *ngIf="form.controls.isEdit.value">Edit</span> event</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-form-field class="w-100">
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <input matInput [matDatepicker]="start" placeholder="Start Date" formControlName="start">
+          <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+          <mat-datepicker #start></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <input matInput [matDatepicker]="end" placeholder="End Date" formControlName="end">
+          <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+          <mat-datepicker #end></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-raised-button color="primary" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!form.controls.isEdit.value">Save</span><span *ngIf="form.controls.isEdit.value">Update</span></button>
+    <button mat-raised-button color="warn" (click)="close()">Cancel</button>
+</div>

@@ -1,0 +1,122 @@
+<app-content-header 
+    [icon]="'list'" 
+    [title]="'Lists'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2">
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Basic list</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>Item 1</mat-list-item>
+                    <mat-list-item>Item 2</mat-list-item>
+                    <mat-list-item>Item 3</mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Navigation lists</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-nav-list>
+                    <mat-list-item *ngFor="let link of [1,2,3]">
+                        <a matLine href="javascript:void(0)">Link {{ link }}</a>
+                        <button mat-icon-button>
+                            <mat-icon>info</mat-icon>
+                        </button>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Selection lists</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-selection-list #shoes>
+                    <mat-list-option *ngFor="let option of [1,2,3,4]">
+                      option {{option}}
+                    </mat-list-option>
+                </mat-selection-list>
+                <p>Options selected: {{shoes.selectedOptions.selected.length}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>  
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Multi-line lists</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h4>Two line list</h4>
+                <mat-divider></mat-divider>
+                <mat-list>
+                    <mat-list-item>
+                        <h3 matLine> Line 1 </h3>
+                        <p matLine>
+                          <span> Line 2 </span>
+                          <small> -- content </small>
+                        </p>
+                    </mat-list-item>
+                </mat-list>                
+                <h4>Three line list</h4>
+                <mat-divider></mat-divider>
+                <mat-list>
+                    <mat-list-item>
+                        <h3 matLine> Line 1 </h3>
+                        <p matLine> Line 2 </p>
+                        <p matLine> Line 3 </p>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Lists with icons</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let number of [1,2,3]">
+                        <mat-icon matListIcon>folder</mat-icon>
+                        <h3 matLine> Title {{number}} </h3>
+                        <p matLine>
+                            <span> subject {{number}} </span>
+                            <small> -- content {{number}} </small>
+                        </p>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>  
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Lists with avatars</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let number of [1,2,3]">
+                        <img matListAvatar [src]="'assets/img/avatars/avatar-'+number+'.png'" alt="image">
+                        <h3 matLine> Title {{number}} </h3>
+                        <p matLine>
+                            <span> subject {{number}} </span>
+                            <small> -- content {{number}} </small>
+                        </p>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>               
+</div>

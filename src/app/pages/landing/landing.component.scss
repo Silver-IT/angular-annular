@@ -1,0 +1,104 @@
+.landing-container{
+    padding-top: 56px;
+    .landing-toolbar{
+        position: fixed;
+        top: 0;
+        height: 56px;
+        button{
+            text-transform: capitalize;
+            font-weight: 400;
+        }
+        .logo{
+            min-width: 160px !important;
+        }
+    }
+    .landing-sidenav{
+        width: 200px;
+        button{
+            text-transform: capitalize;
+        }        
+    }
+    .title-section{
+        font-size: 16px;
+        text-align: center;
+    }
+    .block-title{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .client-item{
+        height: 80px;
+        text-align: center;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .testimonial-item{
+        margin-top: 50px;
+        text-align: center; 
+        overflow: visible;       
+        .text{
+            font-style: italic;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: -76px;
+        }
+    } 
+    #pricing{
+        min-height: 10px; //for prevent scroll on tab change
+    }
+    .pricing-tabs.mat-tab-group .mat-tab-header{
+        width: 320px;
+        margin: 0 auto;
+        border-bottom: none !important;
+        margin-bottom: 16px;
+    }
+    .pricing-card.mat-card{
+        padding: 0;
+        overflow: hidden;
+        .pricing-title{
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .pricing-header{
+            min-height: 126px;
+            p.desc, small{
+                font-weight: 300;
+            }
+        }
+        .del{
+            text-decoration:line-through;
+        }    
+    } 
+    .landing-footer{
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+    }    
+}
+
+.arrow-btn.mat-mini-fab{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    &.prev{
+        left: 12px;
+    }
+    &.next{
+        right: 12px;
+    }
+    &.hidden{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 599px) { 
+    .pricing-tabs.mat-tab-group .mat-tab-header{
+        width: 210px;
+    }  
+}

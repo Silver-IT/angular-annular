@@ -1,0 +1,46 @@
+<app-content-header 
+    [icon]="'star_half'" 
+    [title]="'Slide toggle'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Slide-toggle configuration</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <section class="py-3">
+                    <label class="mx-2">Color:</label>
+                    <mat-radio-group [(ngModel)]="color">
+                        <mat-radio-button value="primary" class="mx-2">Primary</mat-radio-button>
+                        <mat-radio-button value="accent" class="mx-2">Accent</mat-radio-button>
+                        <mat-radio-button value="warn" class="mx-2">Warn</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="checked" class="mx-2">Checked</mat-checkbox>
+                </section>
+                <section class="py-3">
+                    <mat-checkbox [(ngModel)]="disabled" class="mx-2">Disabled</mat-checkbox>
+                </section>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-content>
+                <h2 class="py-3 mx-2">Result</h2>
+                <section class="py-3">
+                    <mat-slide-toggle
+                        class="mx-2"
+                        [color]="color"
+                        [checked]="checked"
+                        [disabled]="disabled">
+                        Slide me!
+                    </mat-slide-toggle>
+                </section>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+</div>

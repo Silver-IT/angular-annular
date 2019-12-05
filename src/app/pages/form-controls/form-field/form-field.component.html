@@ -1,0 +1,133 @@
+<app-content-header 
+    [icon]="'view_stream'" 
+    [title]="'Form field'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Simple form field</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field>
+                    <input matInput placeholder="Input">
+                </mat-form-field>
+                <mat-form-field>
+                    <textarea matInput placeholder="Textarea"></textarea>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Select">
+                        <mat-option value="option">Option</mat-option>
+                    </mat-select>
+                </mat-form-field>                               
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Form field with placeholder</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <form [formGroup]="options">
+                    <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+                    <div class="py-1">
+                        <label>Float label: </label>
+                        <mat-radio-group formControlName="floatLabel">
+                            <mat-radio-button value="auto" class="mx-2">Auto</mat-radio-button>
+                            <mat-radio-button value="always" class="mx-2">Always</mat-radio-button>
+                            <mat-radio-button value="never" class="mx-2">Never</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </form>
+                <mat-form-field [hideRequiredMarker]="options.value.hideRequired"
+                                [floatLabel]="options.value.floatLabel">
+                    <input matInput placeholder="Simple placeholder" required>
+                </mat-form-field>
+                <mat-form-field [hideRequiredMarker]="options.value.hideRequired"
+                                [floatLabel]="options.value.floatLabel">
+                    <mat-select required>
+                        <mat-option>-- None --</mat-option>
+                        <mat-option value="option">Option</mat-option>
+                    </mat-select>
+                    <mat-placeholder><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> placeholder</i></mat-placeholder>
+                </mat-form-field>               
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Form field with hints</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field hintLabel="Max 10 characters">
+                    <input matInput #input maxlength="10" placeholder="Enter some input">
+                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Select me">
+                      <mat-option value="option">Option</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                </mat-form-field>                            
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Form field with error messages</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field>
+                    <input matInput placeholder="Enter your email" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>                           
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Form field with prefix & suffix</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field>
+                    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Amount" type="number" [style.text-align]="'right'">
+                    <span matPrefix>$&nbsp;</span>
+                    <span matSuffix>.00</span>
+                </mat-form-field>                        
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center">                
+                <mat-card-subtitle><h2>Form field theming</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="themingForm" [style.fontSize.px]="getFontSize()" fxLayout="column" fxLayoutAlign="center">
+                    <mat-form-field [color]="themingForm.value.color">
+                        <mat-select placeholder="Color" formControlName="color">
+                            <mat-option value="primary">Primary</mat-option>
+                            <mat-option value="accent">Accent</mat-option>
+                            <mat-option value="warn">Warn</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field [color]="themingForm.value.color">
+                        <input matInput type="number" placeholder="Font size (px)" formControlName="fontSize" min="10">
+                        <mat-error *ngIf="themingForm.get('fontSize')?.invalid">Min size: 10px</mat-error>
+                    </mat-form-field>
+                </form>     
+            </mat-card-content>
+        </mat-card>
+    </div>  
+</div>

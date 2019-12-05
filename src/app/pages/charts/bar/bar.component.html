@@ -1,0 +1,185 @@
+<app-content-header 
+    [icon]="'insert_chart'" 
+    [title]="'Bar Charts'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" fxLayout.gt-sm="row wrap" class="p-2">
+    <div fxFlex="50" class="p-2"> 
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Vertical Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-vertical
+                      [scheme]="colorScheme"
+                      [gradient]="gradient"
+                      [xAxis]="showXAxis"
+                      [yAxis]="showYAxis"
+                      [legend]="showLegend"
+                      [showXAxisLabel]="showXAxisLabel"
+                      [showYAxisLabel]="showYAxisLabel"
+                      [xAxisLabel]="xAxisLabel"
+                      [yAxisLabel]="yAxisLabel"
+                      [results]="single"
+                      (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>                  
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Horizontal Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-horizontal
+                    [scheme]="colorScheme"
+                    [results]="single"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="yAxisLabel"
+                    [yAxisLabel]="xAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50"  class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Grouped Vertical Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-vertical-2d
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical-2d>        
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Grouped Horizontal Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-horizontal-2d
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="yAxisLabel"
+                    [yAxisLabel]="xAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal-2d>        
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Stacked Vertical Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-vertical-stacked
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical-stacked>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Stacked Horizontal Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-horizontal-stacked
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="yAxisLabel"
+                    [yAxisLabel]="xAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal-stacked>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Normalized Vertical Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-vertical-normalized
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical-normalized>         
+            </div>
+        </mat-card>
+    </div>
+    <div fxFlex="50" class="p-2">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">                
+                <mat-card-subtitle><h2>Normalized Horizontal Bar Chart</h2></mat-card-subtitle>
+            </mat-card-header>
+            <div class="w-100 h-300p">
+                <ngx-charts-bar-horizontal-normalized
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="yAxisLabel"
+                    [yAxisLabel]="xAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal-normalized>         
+            </div>
+        </mat-card>
+    </div>
+</div>

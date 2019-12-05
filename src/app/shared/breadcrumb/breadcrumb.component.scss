@@ -1,0 +1,22 @@
+.breadcrumb{
+    font-size: 13px;
+    a{
+        text-decoration: none;
+    }
+    .mat-icon{
+        font-size: 20px;
+        height: 20px;
+        width: 20px;
+        padding: 0 6px;
+    }
+    .breadcrumb-title.active{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .breadcrumb-item+.breadcrumb-item:before{
+        display: inline-block;
+        padding-right: .5rem;
+        padding-left: .5rem;
+        content: "/";
+    }
+}

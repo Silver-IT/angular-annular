@@ -1,0 +1,50 @@
+<mat-drawer-container class="landing-container h-100">     
+    <mat-drawer #sidenav mode="over" class="landing-sidenav mat-elevation-z6 p-2" autoFocus="false">
+          <button *ngFor="let item of menuItems" mat-button [ngx-scroll-to]="item" [ngx-scroll-to-duration]="300" (click)="sidenav.toggle()" class="w-100">{{item}}</button>         
+    </mat-drawer> 
+    <mat-drawer-content> 
+        <mat-toolbar class="landing-toolbar mat-elevation-z4">
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+                <div fxLayout="row" fxLayoutAlign="center center">               
+                    <a routerLink="/" fxLayout="row" fxLayoutAlign="start center" class="logo">
+                        <img src="assets/img/logo.png" alt="logo">
+                        <span class="mx-2">ANNULAR</span> 
+                    </a>
+                </div> 
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxShow="false" fxShow.gt-sm>
+                        <button *ngFor="let item of menuItems" mat-button [ngx-scroll-to]="item" [ngx-scroll-to-duration]="300" class="mx-1">{{item}}</button> 
+                    </div>
+                    <button mat-icon-button (click)="sidenav.toggle()" fxHide="false" fxHide.gt-sm class="mx-3">
+                        <mat-icon>menu</mat-icon>
+                    </button> 
+                    <a mat-raised-button color="accent" href="https://themeforest.net/item/annular-angular-material-design-admin-template/22537089" target="blank">Buy Now</a>                             
+                </div>
+            </div>
+        </mat-toolbar> 
+        <app-content-header id="home"
+            [icon]="'important_devices'" 
+            [title]="'Angular Material Design Admin Template'"
+            [desc]="'Annular implements the official Angular Material Design components and built with Angular CLI. No Bootstrap!, No jQuery! and Only TypeScript! Start creating your app with Annular template, 8 layouts, 8 color styles, 35+ pages'" 
+            [hideBreadcrumb]="true"
+            [hasBgImage]="true" 
+            [class]="'py-5 px-2'"></app-content-header>        
+        
+        <div class="p-2">
+            <app-features></app-features>
+            <app-our-works></app-our-works>
+            <app-our-services></app-our-services>
+            <app-testimonials></app-testimonials>           
+            <app-pricing></app-pricing> 
+            <app-contact-us></app-contact-us> 
+        </div> 
+
+        <mat-toolbar color="primary" class="mt-5">
+            <div fxLayout.xs="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between center" class="landing-footer">
+                <span>Copyright ©2018 All Rights Reserved</span>
+                <span>made by <a mat-button href="https://themeforest.net/user/theme_season/portfolio" target="blank">ThemeSeason</a></span>
+            </div>
+        </mat-toolbar>
+
+    </mat-drawer-content>
+</mat-drawer-container>

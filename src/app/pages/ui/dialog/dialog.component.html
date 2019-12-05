@@ -1,0 +1,25 @@
+<app-content-header 
+    [icon]="'open_in_new'" 
+    [title]="'Dialog'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Dialog Overview</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="name" placeholder="What's your name?">
+                </mat-form-field>
+                <p>
+                    <button mat-raised-button (click)="openDialog()">Pick one</button>
+                </p>
+                <p *ngIf="animal" class="py-1">You chose: <i>{{animal}}</i></p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

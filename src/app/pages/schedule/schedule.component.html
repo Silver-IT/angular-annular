@@ -1,0 +1,66 @@
+<app-content-header 
+    [title]="'Schedule'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-5 cal-mobile'"></app-content-header>
+
+<mat-toolbar color="primary" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="px-2 schedule-toolbar">
+    <div class="cal-arrows">                
+        <button mat-icon-button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+            <mat-icon *ngIf="!settings.rtl">chevron_left</mat-icon>
+            <mat-icon *ngIf="settings.rtl">chevron_right</mat-icon>
+        </button>
+        <button mat-icon-button mwlCalendarToday [(viewDate)]="viewDate">
+            <mat-icon>today</mat-icon>
+        </button>
+        <button mat-icon-button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+            <mat-icon *ngIf="settings.rtl">chevron_left</mat-icon>
+            <mat-icon *ngIf="!settings.rtl">chevron_right</mat-icon>
+        </button>
+    </div>
+    <h2>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h2>
+    <div class="">
+        <button mat-icon-button (click)="view = 'month'">
+            <mat-icon>view_comfy</mat-icon>
+        </button>
+        <button mat-icon-button (click)="view = 'week'">
+            <mat-icon>view_week</mat-icon>
+        </button>
+        <button mat-icon-button (click)="view = 'day'">
+            <mat-icon>view_day</mat-icon>
+        </button>
+        <button mat-icon-button (click)="openScheduleDialog(null)">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+<div fxLayout="row wrap">
+    <div fxFlex="100"> 
+        <mat-card class="block p-0">  
+            <div [ngSwitch]="view">
+                <mwl-calendar-month-view
+                    *ngSwitchCase="'month'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    [refresh]="refresh"
+                    [activeDayIsOpen]="activeDayIsOpen"
+                    (dayClicked)="dayClicked($event.day)">
+                </mwl-calendar-month-view>
+                <mwl-calendar-week-view
+                    *ngSwitchCase="'week'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    [refresh]="refresh">
+                </mwl-calendar-week-view>
+                <mwl-calendar-day-view
+                    *ngSwitchCase="'day'"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    [refresh]="refresh">
+                </mwl-calendar-day-view>
+            </div>
+
+       </mat-card>
+    </div>
+</div>

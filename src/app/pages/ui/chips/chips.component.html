@@ -1,0 +1,63 @@
+<app-content-header 
+    [icon]="'label'" 
+    [title]="'Chips'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Basic chips</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-chip-list>
+                    <mat-chip>One fish</mat-chip>
+                    <mat-chip>Two fish</mat-chip>
+                    <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+                    <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+                    <mat-chip color="warn" selected="true">Warn fish</mat-chip>
+                </mat-chip-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Chips with input</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field class="w-100">
+                    <mat-chip-list #chipList>
+                      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                              [removable]="removable" (remove)="remove(fruit)">
+                        {{fruit.name}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                      </mat-chip>
+                      <input placeholder="New fruit..."
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="add($event)" />
+                    </mat-chip-list>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="p-2">
+        <mat-card>
+            <mat-card-header>                
+                <mat-card-subtitle><h2>Vertical chips</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+                    <mat-chip class="custom-chip">Default chip</mat-chip>
+                    <mat-chip color="primary" selected="true" class="custom-chip">Primary chip</mat-chip>
+                    <mat-chip color="accent" selected="true" class="custom-chip">Accent chip</mat-chip>
+                    <mat-chip color="warn" selected="true" class="custom-chip">Warn chip</mat-chip>
+                </mat-chip-list>
+            </mat-card-content>
+        </mat-card>
+    </div>    
+</div>

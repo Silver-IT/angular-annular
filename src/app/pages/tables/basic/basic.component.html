@@ -1,0 +1,31 @@
+<app-content-header 
+    [icon]="'view_column'" 
+    [title]="'Basic'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="column" class="p-2">
+    <div class="p-2"> 
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">       
+            <ng-container matColumnDef="position">
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>         
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>     
+            <ng-container matColumnDef="weight">
+                <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            </ng-container>        
+            <ng-container matColumnDef="symbol">
+                <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div [fxLayout]="(menuParentId == 0) ? 'row' : 'column'" fxLayoutAlign="center center">
+    <div *ngFor="let menu of menuItems" class="horizontal-menu-item">
+        <a *ngIf="menu.routerLink && !menu.hasSubMenu" mat-button [class.parent-item]="menuParentId == 0"
+            fxLayout="row" fxLayoutAlign="(menuParentId == 0) ? 'center center' : 'start center'"
+            [routerLink]="[menu.routerLink]" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
+            [matTooltip]="menu.title" matTooltipPosition="above" [matTooltipDisabled]="(settings.menuType=='mini') ? 'false' : 'true'"
+            [id]="'horizontal-menu-item-'+menu.id">
+            <mat-icon class="horizontal-menu-icon">{{menu.icon}}</mat-icon>
+            <span class="horizontal-menu-title">{{menu.title}}</span>
+        </a>
+        <a *ngIf="menu.href && !menu.subMenu" mat-button [class.parent-item]="menuParentId == 0"
+            fxLayout="row" [fxLayoutAlign]="(menuParentId == 0) ? 'center center' : 'start center'"
+            [attr.href]="menu.href || ''" [attr.target]="menu.target || ''"
+            [matTooltip]="menu.title" matTooltipPosition="above" [matTooltipDisabled]="(settings.menuType=='mini') ? 'false' : 'true'"
+            [id]="'horizontal-menu-item-'+menu.id">
+            <mat-icon class="horizontal-menu-icon">{{menu.icon}}</mat-icon>
+            <span class="horizontal-menu-title">{{menu.title}}</span>
+        </a>
+        <a *ngIf="menu.hasSubMenu" mat-button [class.parent-item]="menuParentId == 0"
+            fxLayout="row" [fxLayoutAlign]="(menuParentId == 0) ? 'center center' : 'start center'"
+            [matTooltip]="menu.title" matTooltipPosition="above" [matTooltipDisabled]="(settings.menuType=='mini') ? 'false' : 'true'"
+            [id]="'horizontal-menu-item-'+menu.id">
+            <mat-icon class="horizontal-menu-icon">{{menu.icon}}</mat-icon>
+            <span class="horizontal-menu-title">{{menu.title}}</span>
+        </a>
+
+        <div *ngIf="menu.hasSubMenu" class="horizontal-sub-menu mat-elevation-z1" [id]="'horizontal-sub-menu-'+menu.id">
+            <app-horizontal-menu [menuParentId]="menu.id"></app-horizontal-menu>
+        </div>
+    </div>
+</div>

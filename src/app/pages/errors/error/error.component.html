@@ -1,0 +1,18 @@
+<mat-sidenav-container class="h-100">
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+       <div fxFlex="80" fxFlex.gt-sm="30" fxFlex.sm="60" class="mat-elevation-z6">
+            <app-content-header 
+                [icon]="'warning'" 
+                [title]="'500'" 
+                [hideBreadcrumb]="true"
+                [hasBgImage]="true" 
+                [class]="'pt-4 pb-3'"></app-content-header>            
+            <div class="p-4 text-center">
+                <h2 class="py-2">INTERNAL SERVER ERROR</h2>
+                <p class="pt-2">Opps, something went wrong.</p> 
+                <p class="pt-2">You can go to home page.</p> 
+                <button mat-raised-button color="primary" class="mat-elevation-z6 mt-3" type="button" (click)="goHome()">GO HOME</button>
+            </div>
+        </div>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,24 @@
+<app-content-header 
+    [icon]="'insert_emoticon'" 
+    [title]="'Material Icons'" 
+    [desc]="'Material icons are delightful, beautifully crafted symbols for common actions and items.'"
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'"></app-content-header>
+
+<div fxLayout="row wrap" class="p-2">
+    <div *ngFor="let icon of icons" fxFlex="50" fxFlex.gt-sm="20" fxFlex.sm="25" class="p-2"> 
+        <mat-card fxLayout="column" fxLayoutAlign="center center">
+            <mat-card-header>
+                <mat-card-subtitle><mat-icon class="mat-icon-xlg">{{icon}}</mat-icon></mat-card-subtitle>
+            </mat-card-header>
+            <p class="w-100 text-truncate text-center">{{icon}}</p>  
+        </mat-card>
+    </div>
+</div>
+
+<div fxLayout="row" class="p-2">
+    <div fxFlex="100" fxLayoutAlign="center center" class="pb-2"> 
+        <a href="https://material.io/icons/" target="blank" mat-raised-button color="primary">More icons <mat-icon>more_horiz</mat-icon></a>
+    </div>
+</div>
